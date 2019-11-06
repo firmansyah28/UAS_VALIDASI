@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Crud_matakuliah"></activity>
+        <activity android:name=".DialogKRSActivity"></activity>
+        <activity android:name=".Crud_matakuliah" />
         <activity android:name=".Isi_crud_dossen" />
         <activity android:name=".Crud_dosen" />
         <activity android:name=".Menu_admin" />
