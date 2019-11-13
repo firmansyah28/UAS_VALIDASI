@@ -5,6 +5,8 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +24,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.uts_progmob.MenuDosen;
+import com.example.uts_progmob.Menu_admin;
 import com.example.uts_progmob.R;
 import com.example.uts_progmob.ui.login.LoginViewModel;
 import com.example.uts_progmob.ui.login.LoginViewModelFactory;
@@ -57,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
             @Override
@@ -118,6 +123,49 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onCreate (Bundle saveInstanceState){
+        super.onCreate(saveInstanceState);
+        setContentView(R.layout.activity_login);
+
+        SharedPreferences prefs = LoginActivity.this.getSharedPreferences("prefs_file",MODE_PRIVATE);
+        String statusLogin = prefs.getString("isiLogin",null);
+        EditText roleLogin = (EditText) findViewById(R.id.username);
+        String strValue = roleLogin.getText().toString();
+        Button loginBtn = (Button) findViewById(R .id.login);
+        loginBtn.setOnClickListener(myloginBtnClick);
+        if (statusLogin == "Admin") {
+            Intent intent = new Intent(LoginActivity.this, Menu_admin.class);
+            startActivity(intent);
+        }else if (statusLogin == "Dosen") {
+            Intent intent = new Intent(LoginActivity.this, MenuDosen.class);
+            startActivity(intent);
+        }else if (statusLogin =="User") {
+            Toast.makeText(LoginActivity.this, "tidak dapat login", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    private View.OnClickListener myloginBtnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            SharedPreferences prefs = LoginActivity.this.getSharedPreferences("prefs_file", MODE_PRIVATE);
+            String statusLogin = prefs.getString("isiLogin", null);
+            SharedPreferences.Editor edit = prefs.edit();
+
+            Button loginBtn = (Button) findViewById(R.id.login);
+            if (statusLogin != null) {
+                edit.putString("isLogin", null);
+            } else if (statusLogin == null) {
+                edit.putString("isiLogin", "Admin");
+                Intent intent = new Intent(LoginActivity.this, Menu_admin.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(LoginActivity.this,"belum", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
+
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
