@@ -123,28 +123,30 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
-    public void onCreate (Bundle saveInstanceState){
+    public void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_login);
 
-        SharedPreferences prefs = LoginActivity.this.getSharedPreferences("prefs_file",MODE_PRIVATE);
-        String statusLogin = prefs.getString("isiLogin",null);
+        SharedPreferences prefs = LoginActivity.this.getSharedPreferences("prefs_file", MODE_PRIVATE);
+        String statusLogin = prefs.getString("isiLogin", null);
         EditText roleLogin = (EditText) findViewById(R.id.username);
         String strValue = roleLogin.getText().toString();
-        Button loginBtn = (Button) findViewById(R .id.login);
+        Button loginBtn = (Button) findViewById(R.id.login);
         loginBtn.setOnClickListener(myloginBtnClick);
         if (statusLogin == "Admin") {
             Intent intent = new Intent(LoginActivity.this, Menu_admin.class);
             startActivity(intent);
-        }else if (statusLogin == "Dosen") {
+        } else if (statusLogin == "Dosen") {
             Intent intent = new Intent(LoginActivity.this, MenuDosen.class);
             startActivity(intent);
-        }else if (statusLogin =="User") {
+        } else if (statusLogin == "User") {
             Toast.makeText(LoginActivity.this, "tidak dapat login", Toast.LENGTH_SHORT).show();
         }
 
     }
+
     private View.OnClickListener myloginBtnClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -160,20 +162,20 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, Menu_admin.class);
                 startActivity(intent);
             } else {
-                Toast.makeText(LoginActivity.this,"belum", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "belum", Toast.LENGTH_SHORT).show();
             }
         }
 
 
+        private void updateUiWithUser(LoggedInUserView model) {
+            String welcome = getString(R.string.welcome) + model.getDisplayName();
+            // TODO : initiate successful logged in experience
+            Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        }
 
-
-    private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-    }
-
-    private void showLoginFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
-    }
+        private void showLoginFailed(@StringRes Integer errorString) {
+            Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+        }
+    };
 }
+
