@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Isi_crud_dossen">
+    tools:context=".Isi_crud_mahasiswa">
 
     <Button
         android:id="@+id/btnUpload"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextnidn"
+        android:id="@+id/editTextnim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -68,19 +68,6 @@
         app:layout_constraintVertical_bias="0.736" />
 
     <EditText
-        android:id="@+id/editTextgelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
-
-    <EditText
         android:id="@+id/editTextemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,18 +106,6 @@
         app:layout_constraintVertical_bias="0.733" />
 
     <TextView
-        android:id="@+id/txtgelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gelar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
-
-    <TextView
         android:id="@+id/txtemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -157,7 +132,7 @@
         android:id="@+id/txtnim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NIDN"
+        android:text="NIM"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
@@ -189,17 +164,17 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewdosen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="33dp"
+        android:id="@+id/imageViewmhs"
+        android:layout_width="105dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="37dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnsimpan"
+        app:layout_constraintEnd_toStartOf="@+id/btnUpload"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextfoto"
-        tools:srcCompat="@tools:sample/avatars[8]" />
+        tools:srcCompat="@tools:sample/avatars[5]" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

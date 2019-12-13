@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DataDosenAPI"></activity>
+        <activity android:name=".TambahMahasiswaActivity"></activity>
+        <activity android:name=".Isi_crud_mahasiswa" />
+        <activity android:name=".Crud_mahasiswa" />
+        <activity android:name=".TambahDosenActivity" />
+        <activity android:name=".DataDosenAPI" />
         <activity android:name=".DialogKRSActivity" />
         <activity android:name=".Crud_matakuliah" />
         <activity android:name=".Isi_crud_dossen" />

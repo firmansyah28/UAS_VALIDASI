@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Crud_dosen">
+    tools:context=".Crud_mahasiswa">
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="183dp"
-        android:layout_height="99dp"
+        android:layout_width="152dp"
+        android:layout_height="89dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.58"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[18]" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic[15]" />
 
     <TextView
         android:id="@+id/txtAlamat"
@@ -43,23 +43,11 @@
         app:layout_constraintVertical_bias="0.706" />
 
     <TextView
-        android:id="@+id/txtGelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gelar :"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599" />
-
-    <TextView
         android:id="@+id/txtnamadosen2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
-        android:text="NIDN - NAMA DOSEN"
+        android:text="NIM - NAMA MAHASISWA"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -98,38 +86,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
-        android:text="NIDN - NAMA DOSEN"
+        android:text="NIM - NAMA MAHASISWA"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/txtgelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gelar :"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
-
     <ImageView
         android:id="@+id/imageView3mhs"
-        android:layout_width="183dp"
-        android:layout_height="99dp"
+        android:layout_width="167dp"
+        android:layout_height="89dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.03"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[18]" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic[15]" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
